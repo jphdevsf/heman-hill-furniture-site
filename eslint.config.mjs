@@ -9,6 +9,16 @@ const compat = new FlatCompat({
   baseDirectory: __dirname,
 });
 
-const eslintConfig = [...compat.extends("next/core-web-vitals")];
+const eslintConfig = [
+  ...compat.extends("next/core-web-vitals"),
+  "plugin:prettier/recommended"
+];
 
-export default eslintConfig;
+export default {
+  ...eslintConfig,
+  rules: {
+    "indent": ["error", 2],
+    "semi": ["error", "never"],
+    "prettier/prettier": ["error", { "semi": false, "tabWidth": 2 }]
+  }
+};
