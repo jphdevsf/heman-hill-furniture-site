@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "generateJson": "node ./scripts/generate-images-json.js",
+    "build": "npm run generateJson && next build",
     "start": "next start",
     "lint": "next lint"
   },
