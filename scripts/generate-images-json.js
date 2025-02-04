@@ -8,8 +8,12 @@ console.log('Generating images JSON file...');
 console.log('Gallery directory:', galleryDir);
 console.log('Output file path:', outputFilePath);
 
+const validExtensions = ['.jpg', '.jpeg', '.png', '.gif', '.webp'];
+
 const files = fs.readdirSync(galleryDir);
-const images = files.map(file => `/images/gallery/${file}`);
+const images = files
+  .filter(file => validExtensions.includes(path.extname(file).toLowerCase()))
+  .map(file => `/images/gallery/${file}`);
 
 fs.writeFileSync(outputFilePath, JSON.stringify(images, null, 2));
 
