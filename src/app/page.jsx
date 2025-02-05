@@ -1,21 +1,22 @@
 import Gallery from './components/Gallery';
 import Header from './components/Header';
 import Hero from './components/Hero';
+import About from './components/About';
 import Contact from './components/Contact';
+import Footer from './components/Footer';
 
 const HomePage = () => {
   const currentYear = new Date().getFullYear();
   return (
-    <div>
+    <div className="bg-warmGray-900 block m-auto">
       <Header />
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
         <Hero />
         <Gallery />
+        <About />
         <Contact />
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center mt-10">
-        <p className="text-xs text-gray-500 my-5">© {currentYear} by HemanHill</p>
-      </footer>
+      <Footer />
     </div>
   );
 };
