@@ -13,6 +13,7 @@ const validExtensions = ['.jpg', '.jpeg', '.png', '.gif', '.webp'];
 const files = fs.readdirSync(galleryDir);
 const images = files
   .filter(file => validExtensions.includes(path.extname(file).toLowerCase()))
+  .filter(file => !/^EXCLUDE_/.test(file))
   .map(file => `/images/gallery/${file}`);
 
 fs.writeFileSync(outputFilePath, JSON.stringify(images, null, 2));

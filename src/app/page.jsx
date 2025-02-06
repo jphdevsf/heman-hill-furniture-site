@@ -8,7 +8,7 @@ import Footer from './components/Footer';
 const HomePage = () => {
   const currentYear = new Date().getFullYear();
   return (
-    <div className="bg-warmGray-900 block m-auto">
+    <div className="bg-black block m-auto">
       <Header />
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
         <Hero />
