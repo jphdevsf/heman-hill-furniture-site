@@ -70,6 +70,7 @@ const Gallery = () => {
                   alt={`Gallery image ${index + 1}`}
                   width={300}
                   height={300}
+                  layout="responsive"
                   style={{ width: '100%', height: 'auto' }}
                   priority={index < 3} // Add priority to the first three images
                   className="transition-transform duration-500 ease-in-out hover:scale-105"
