@@ -6,7 +6,6 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 
 const HomePage = () => {
-  const currentYear = new Date().getFullYear();
   return (
     <div className="bg-black block m-auto">
       <Header />

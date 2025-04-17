@@ -9,6 +9,7 @@ Modal.setAppElement('#__next');
 
 const Gallery = () => {
   const [images, setImages] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
   const [isOpen, setIsOpen] = useState(false);
   const [currentImage, setCurrentImage] = useState(null);
 
@@ -17,6 +18,7 @@ const Gallery = () => {
       const res = await fetch('/images/gallery/images.json');
       const data = await res.json();
       setImages(data);
+      setIsLoading(false);
     };
 
     fetchImages();
@@ -41,8 +43,8 @@ const Gallery = () => {
   const breakpointColumnsObj = {
     default: 4,
     1100: 3,
-    700: 2,
-    500: 1
+    700: 3,
+    500: 2
   };
 
   return (
@@ -50,34 +52,37 @@ const Gallery = () => {
       <div className="max-w-[1440px] mx-auto">
         <div className="block m-4">
           <h2 className="text-4xl md:text-5xl my-10 font-jost font-light text-center">Gallery</h2>
-          <Masonry
-            breakpointCols={breakpointColumnsObj}
-            className="flex -ml-4 w-auto"
-            columnClassName="pl-4 bg-clip-padding"
-          >
-            {images.map((src, index) => (
-              <div
-                key={index}
-                className="mb-4 overflow-hidden relative cursor-pointer"
-                onClick={() => openModal(src)}
-                onKeyDown={(event) => handleKeyDown(event, src)}
-                tabIndex={0}
-                role="button"
-                aria-label={`Open image ${index + 1}`}
-              >
-                <Image
-                  src={src}
-                  alt={`Gallery image ${index + 1}`}
-                  width={300}
-                  height={300}
-                  layout="responsive"
-                  style={{ width: '100%', height: 'auto' }}
-                  priority={index < 3} // Add priority to the first three images
-                  className="transition-transform duration-500 ease-in-out hover:scale-105"
-                />
-              </div>
-            ))}
-          </Masonry>
+          {isLoading ? (
+            <p className="text-center text-white">Loading...</p> // Placeholder while loading
+          ) : (
+            <Masonry
+              breakpointCols={breakpointColumnsObj}
+              className="flex -ml-4 w-auto"
+              columnClassName="pl-4 bg-clip-padding"
+            >
+              {images.map((src, index) => (
+                <div
+                  key={index}
+                  className="mb-4 overflow-hidden relative cursor-pointer"
+                  onClick={() => openModal(src)}
+                  onKeyDown={(event) => handleKeyDown(event, src)}
+                  tabIndex={0}
+                  role="button"
+                  aria-label={`Open image ${index + 1}`}
+                >
+                  <Image
+                    src={src}
+                    alt={`Gallery image ${index + 1}`}
+                    width={300}
+                    height={300}
+                    style={{ width: '100%', height: 'auto' }}
+                    priority={index < 3} // Add priority to the first three images
+                    className="transition-transform duration-500 ease-in-out hover:scale-105"
+                  />
+                </div>
+              ))}
+            </Masonry>
+          )}
           <Modal
             isOpen={isOpen}
             onRequestClose={closeModal}

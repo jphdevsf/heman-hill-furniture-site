@@ -15,8 +15,8 @@ const Hero = () => {
         <Image
           src={`/images/hero-french-country-farmhouse-table-natural.jpg`}
           alt={`central coast`}
-          layout="fill"
-          objectFit="cover"
+          fill
+          style={{ objectFit: 'cover' }}
         />
       </div>
     </div>

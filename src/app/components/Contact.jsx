@@ -13,8 +13,8 @@ const Contact = () => {
         <Image
           src={`/images/bio-hills.jpg`}
           alt={`central coast`}
-          layout="fill"
-          objectFit="cover"
+          fill
+          style={{ objectFit: 'cover' }}
         />
       </div>
     </div>

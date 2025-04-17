@@ -1,9 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import Link from 'next/link';
 import { smoothScroll } from '../helpers/smooth-scroll.js';
-// import styles from './header.module.css';
 
 export default function Header() {
   const handleScroll = (targetId) => (event) => {
