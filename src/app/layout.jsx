@@ -1,6 +1,8 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Analytics } from "@vercel/analytics/next"
+
 
 
 const geistSans = Geist({
@@ -28,7 +30,10 @@ export default function RootLayout({ children }) {
         <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400&family=Roboto:wght@300;400&display=swap" rel="stylesheet" />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased sans`}>
-        <div id="__next">{children}</div>
+        <div id="__next">
+          {children}
+        </div>
+        <Analytics />
         <SpeedInsights/>
       </body>
     </html>
