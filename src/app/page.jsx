@@ -1,9 +1,9 @@
-import Gallery from './components/Gallery';
-import Header from './components/Header';
-import Hero from './components/Hero';
-import About from './components/About';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
+import About from "./components/About"
+import Contact from "./components/Contact"
+import Footer from "./components/Footer"
+import GalleryServer from "./components/Gallery/GalleryServer"
+import Header from "./components/Header"
+import Hero from "./components/Hero"
 
 const HomePage = () => {
   return (
@@ -11,13 +11,13 @@ const HomePage = () => {
       <Header />
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
         <Hero />
-        <Gallery />
+        <GalleryServer />
         <About />
         <Contact />
       </main>
       <Footer />
     </div>
-  );
-};
+  )
+}
 
-export default HomePage;
+export default HomePage
