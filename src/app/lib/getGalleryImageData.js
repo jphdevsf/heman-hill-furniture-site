@@ -18,7 +18,7 @@ export async function getGalleryImageData() {
       "Content-Type": "application/x-www-form-urlencoded"
     },
     body,
-    cache: "no-store"
+    next: { revalidate: 3600 }
   })
 
   const data = await response.json()
