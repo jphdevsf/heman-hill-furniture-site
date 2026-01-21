@@ -2,18 +2,26 @@
 import Image from "next/image"
 import { useEffect } from "react"
 import Modal from "react-modal"
+import getScrollbarWidth from "../../helpers/getScrollbarWidth"
 
 Modal.setAppElement("#__next")
 
 const ModalViewerClient = ({ image, onClose }) => {
   useEffect(() => {
+    let originalOverflow = ""
+    let originalPaddingRight = ""
+
     if (image) {
+      const scrollbarWidth = getScrollbarWidth()
+      originalOverflow = document.body.style.overflow
+      originalPaddingRight = document.body.style.paddingRight || "0px"
       document.body.style.overflow = "hidden"
-    } else {
-      document.body.style.overflow = ""
+      document.body.style.paddingRight = `${parseInt(originalPaddingRight) + scrollbarWidth}px`
     }
+
     return () => {
-      document.body.style.overflow = ""
+      document.body.style.overflow = originalOverflow
+      document.body.style.paddingRight = originalPaddingRight
     }
   }, [image])
 
@@ -65,7 +73,7 @@ const ModalViewerClient = ({ image, onClose }) => {
         </button>
 
         {image && (
-          <button type="button" className="" onClick={onClose}>
+          <button type="button" className="m-4" onClick={onClose}>
             <Image
               src={url}
               alt={alt}
