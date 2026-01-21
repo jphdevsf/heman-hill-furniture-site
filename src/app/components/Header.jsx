@@ -23,17 +23,32 @@ export default function Header() {
       <nav aria-label="Main Navigation">
         <ul className="text-lg flex gap-4 font-light text-white mb-8">
           <li>
-            <button type="button" href="#gallery" onClick={handleScroll("gallery")}>
+            <button
+              className="text-white bg-black"
+              type="button"
+              href="#gallery"
+              onClick={handleScroll("gallery")}
+            >
               Gallery
             </button>
           </li>
           <li>
-            <button type="button" href="#about" onClick={handleScroll("about")}>
+            <button
+              className="text-white bg-black"
+              type="button"
+              href="#about"
+              onClick={handleScroll("about")}
+            >
               About
             </button>
           </li>
           <li>
-            <button type="button" href="#contact" onClick={handleScroll("contact")}>
+            <button
+              className="text-white bg-black"
+              type="button"
+              href="#contact"
+              onClick={handleScroll("contact")}
+            >
               Contact
             </button>
           </li>
