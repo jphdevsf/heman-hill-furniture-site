@@ -16,7 +16,7 @@ const ModalViewerClient = ({ image, onClose }) => {
       originalOverflow = document.body.style.overflow
       originalPaddingRight = document.body.style.paddingRight || "0px"
       document.body.style.overflow = "hidden"
-      document.body.style.paddingRight = `${parseInt(originalPaddingRight) + scrollbarWidth}px`
+      document.body.style.paddingRight = `${parseInt(originalPaddingRight, 10) + scrollbarWidth}px`
     }
 
     return () => {
