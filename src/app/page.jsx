@@ -1,10 +1,10 @@
 import About from "./components/About"
+import BackToTop from "./components/BackToTop"
 import Contact from "./components/Contact"
 import Footer from "./components/Footer"
-import GalleryServer from "./components/Gallery/GalleryServer"
+import Gallery from "./components/Gallery"
 import Header from "./components/Header"
 import Hero from "./components/Hero"
-
 export const revalidate = 3600
 
 const HomePage = () => {
@@ -13,9 +13,10 @@ const HomePage = () => {
       <Header />
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
         <Hero />
-        <GalleryServer />
+        <Gallery />
         <About />
         <Contact />
+        <BackToTop />
       </main>
       <Footer />
     </div>
