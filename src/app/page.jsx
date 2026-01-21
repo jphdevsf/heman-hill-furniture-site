@@ -5,6 +5,8 @@ import GalleryServer from "./components/Gallery/GalleryServer"
 import Header from "./components/Header"
 import Hero from "./components/Hero"
 
+export const revalidate = 3600
+
 const HomePage = () => {
   return (
     <div className="bg-black block m-auto">

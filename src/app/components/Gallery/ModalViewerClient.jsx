@@ -68,7 +68,7 @@ const ModalViewerClient = ({ image, onClose }) => {
           <button type="button" className="" onClick={onClose}>
             <Image
               src={url}
-              alt={JSON.stringify(image, null, 2)}
+              alt={alt}
               width={width}
               height={height}
               loading="eager"

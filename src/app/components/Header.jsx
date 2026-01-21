@@ -1,13 +1,13 @@
-'use client';
+"use client"
 
-import Image from 'next/image';
-import { smoothScroll } from '../helpers/smooth-scroll.js';
+import Image from "next/image"
+import { smoothScroll } from "../helpers/smooth-scroll.js"
 
 export default function Header() {
-  const handleScroll = (targetId) => (event) => {
-    event.preventDefault();
-    smoothScroll(targetId);
-  };
+  const handleScroll = targetId => event => {
+    event.preventDefault()
+    smoothScroll(targetId)
+  }
 
   return (
     <header className="bg-black h-[20vh] min-h-[150px] flex flex-col items-center justify-center p-2.5 w-full">
@@ -23,22 +23,22 @@ export default function Header() {
       <nav aria-label="Main Navigation">
         <ul className="text-lg flex gap-4 font-light text-white mb-8">
           <li>
-            <a href="#gallery" onClick={handleScroll('gallery')}>
+            <button type="button" href="#gallery" onClick={handleScroll("gallery")}>
               Gallery
-            </a>
+            </button>
           </li>
           <li>
-            <a href="#about" onClick={handleScroll('about')}>
+            <button type="button" href="#about" onClick={handleScroll("about")}>
               About
-            </a>
+            </button>
           </li>
           <li>
-            <a href="#contact" onClick={handleScroll('contact')}>
+            <button type="button" href="#contact" onClick={handleScroll("contact")}>
               Contact
-            </a>
+            </button>
           </li>
         </ul>
       </nav>
     </header>
-  );
+  )
 }

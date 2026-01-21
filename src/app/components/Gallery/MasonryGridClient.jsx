@@ -24,7 +24,7 @@ const MasonryGridClient = ({ images }) => {
         className="flex -ml-4 w-auto"
         columnClassName="pl-4 bg-clip-padding"
       >
-        {images.map((image, index) => (
+        {images?.map((image, index) => (
           <button
             key={image.id}
             type="button"
