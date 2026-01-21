@@ -1,10 +1,11 @@
 // app/lib/cloudinary.ts
-export async function getGalleryImageData() {
+const getGalleryImageData = async () => {
   try {
     const cloudName = process.env.CLOUDINARY_CLOUD_NAME
     const apiKey = process.env.CLOUDINARY_API_KEY
     const apiSecret = process.env.CLOUDINARY_API_SECRET
-
+    const folderName = process.env.CLOUDINARY_FOLDER
+    const tag = process.env.CLOUDINARY_TAG
     if (!cloudName || !apiKey || !apiSecret) {
       console.error("Missing Cloudinary environment variables")
       return []
@@ -13,7 +14,7 @@ export async function getGalleryImageData() {
     const url = `https://api.cloudinary.com/v1_1/${cloudName}/resources/search`
 
     const body = new URLSearchParams({
-      expression: "folder:hemanhill/* AND tags=gallery",
+      expression: `folder:${folderName}/* AND tags=${tag}`,
       max_results: "100"
     })
 
@@ -51,3 +52,5 @@ export async function getGalleryImageData() {
     return []
   }
 }
+
+export default getGalleryImageData

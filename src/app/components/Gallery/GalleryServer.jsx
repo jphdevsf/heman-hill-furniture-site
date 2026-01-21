@@ -1,4 +1,4 @@
-import { getGalleryImageData } from "../../lib/getGalleryImageData"
+import getGalleryImageData from "../../lib/getGalleryImageData"
 import MasonryGridClient from "./MasonryGridClient"
 
 const GalleryServer = async () => {
