@@ -15,7 +15,8 @@ const getGalleryImageData = async () => {
 
     const body = new URLSearchParams({
       expression: `folder:${folderName}/* AND tags=${tag}`,
-      max_results: "100"
+      max_results: "100",
+      with_field: ["context"]
     })
 
     const response = await fetch(url, {
@@ -42,7 +43,7 @@ const getGalleryImageData = async () => {
 
     return data.resources.map(img => ({
       url: img.secure_url,
-      alt: img.context?.custom?.alt || "",
+      alt: img.context?.alt || "",
       width: img.width,
       height: img.height,
       id: img.public_id

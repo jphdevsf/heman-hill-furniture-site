@@ -73,7 +73,7 @@ const ModalViewerClient = ({ image, onClose }) => {
         </button>
 
         {image && (
-          <button type="button" className="m-4" onClick={onClose}>
+          <button type="button" className="m-4 relative" onClick={onClose}>
             <Image
               src={url}
               alt={alt}
@@ -82,6 +82,9 @@ const ModalViewerClient = ({ image, onClose }) => {
               loading="eager"
               className="block max-w-full h-auto"
             />
+            {alt.length > 0 && (
+              <p className="absolute left-0 top-0 p-4 bg-opacity-80 bg-black text-white">{alt}</p>
+            )}
           </button>
         )}
       </Modal>
