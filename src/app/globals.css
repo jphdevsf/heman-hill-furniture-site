@@ -1,8 +1,6 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-:root {
+/* :root {
   --background: #ffffff;
   --foreground: #171717;
 }
@@ -12,10 +10,56 @@
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
+} */
 
 body {
   color: var(--foreground);
   background: var(--background);
 }
 
+:root {
+  --color-primary: #6900bf;
+  --color-secondary: #ffe492;
+  --color-tertiary: #bf2f5f;
+  --color-quaternary: #c5b2de;
+  --color-warmGray-50: #faf9f7;
+  --color-warmGray-100: #e8e6e1;
+  --color-warmGray-200: #d3cec4;
+  --color-warmGray-300: #b8b2a7;
+  --color-warmGray-400: #a39e93;
+  --color-warmGray-500: #857f72;
+  --color-warmGray-600: #625d52;
+  --color-warmGray-700: #504a40;
+  --color-warmGray-800: #423d33;
+  --color-warmGray-900: #171511;
+  --color-warmGray-950: #0d0c0a;
+  --color-warmGray-1000: #080706;
+}
+
+@theme inline {
+  --color-primary: #6900bf;
+  --color-secondary: #ffe492;
+  --color-tertiary: #bf2f5f;
+  --color-quaternary: #c5b2de;
+  --color-warmGray-50: #faf9f7;
+  --color-warmGray-100: #e8e6e1;
+  --color-warmGray-200: #d3cec4;
+  --color-warmGray-300: #b8b2a7;
+  --color-warmGray-400: #a39e93;
+  --color-warmGray-500: #857f72;
+  --color-warmGray-600: #625d52;
+  --color-warmGray-700: #504a40;
+  --color-warmGray-800: #423d33;
+  --color-warmGray-900: #171511;
+  --color-warmGray-950: #0d0c0a;
+  --color-warmGray-1000: #080706;
+
+  --font-jost: "Jost", "sans-serif";
+  --font-sans: "Roboto", "sans-serif";
+
+  /* --font-leadin: var(--font-source_serif_4);
+  --font-title: var(--font-brunson);
+  --font-body: var(--font-dm_sans);
+  --font-nav: var(--font-dm_mono);
+  --border-1: 1px; */
+}

@@ -12,7 +12,7 @@ const Nav = () => {
       <ul className="text-lg flex gap-4 font-light text-white mb-8">
         <li>
           <button
-            className="text-white bg-black border-b-2 border-b-black hover:border-b-white transition-all duration-300"
+            className="text-white bg-black border-b-2 border-b-black hover:cursor-pointer hover:border-b-white transition-all duration-300"
             type="button"
             onClick={() => handleClick(galleryRef)}
           >
@@ -21,7 +21,7 @@ const Nav = () => {
         </li>
         <li>
           <button
-            className="text-white bg-black border-b-2 border-b-black hover:border-b-white transition-all duration-300"
+            className="text-white bg-black border-b-2 border-b-black hover:cursor-pointer hover:border-b-white transition-all duration-300"
             type="button"
             onClick={() => handleClick(aboutRef)}
           >
@@ -30,7 +30,7 @@ const Nav = () => {
         </li>
         <li>
           <button
-            className="text-white bg-black border-b-2 border-b-black hover:border-b-white transition-all duration-300"
+            className="text-white bg-black border-b-2 border-b-black hover:cursor-pointer hover:border-b-white transition-all duration-300"
             type="button"
             onClick={() => handleClick(contactRef)}
           >

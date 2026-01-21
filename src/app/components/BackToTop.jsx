@@ -12,7 +12,7 @@ const BackToTop = () => {
     <span className="block mx-auto">
       <button
         type="button"
-        className="text-white bg-black flex items-center bg-warmGray-1000 p-4"
+        className="text-white bg-black hover:cursor-pointer flex items-center bg-warmGray-1000 p-4"
         onClick={handleClick}
       >
         <span className="pr-2">Back To Top</span>
