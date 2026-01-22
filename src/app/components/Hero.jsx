@@ -1,10 +1,12 @@
-"use client"
-
 import Image from "next/image"
+import NavSectionAnchor from "./NavSectionAnchor"
 
 const Hero = () => {
   return (
-    <div className="bg-warmGray-1000 w-full mx-auto flex flex-col-reverse md:flex-row-reverse mb-8">
+    <NavSectionAnchor
+      id="hero"
+      className="bg-warmGray-1000 w-full mx-auto flex flex-col-reverse md:flex-row-reverse mb-8"
+    >
       <div className="w-full md:w-1/2 bg-warmGray-1000 mb-4 md:mb-0 flex flex-col justify-center items-center">
         <h1 className="mb-2 text-center text-white font-jost font-light">
           <span className="text-3xl md:text-4xl lg:text-5xl xl:text-7xl">Welcome to </span>
@@ -20,7 +22,7 @@ const Hero = () => {
           style={{ objectFit: "cover" }}
         />
       </div>
-    </div>
+    </NavSectionAnchor>
   )
 }
 
