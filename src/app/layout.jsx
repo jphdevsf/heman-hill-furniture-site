@@ -4,6 +4,8 @@ import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { ScrollRefsProvider } from "./contexts/ScrollRefsContext"
 
+export { siteMetadata as metadata } from "./seo/metadata"
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"]
