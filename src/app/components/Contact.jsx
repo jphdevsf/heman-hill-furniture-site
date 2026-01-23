@@ -10,7 +10,7 @@ const Contact = () => {
           hemanhill@yahoo.com
         </a>
       </div>
-      <div className="h-60 md:h-[33vh] md:min-h-[150px] relative w-full md:w-5/12 mb-8 md:mb-0">
+      <div className="h-60 md:h-[33vh] md:min-h-[150px] relative w-full md:w-3/4 lg:w-6/12 mb-8 md:mb-0">
         <Image
           src={`/images/bio-hills.jpg`}
           alt={`central coast`}
