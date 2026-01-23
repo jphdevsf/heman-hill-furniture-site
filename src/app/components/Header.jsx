@@ -9,14 +9,14 @@ export default function Header() {
   return (
     <header
       ref={topRef}
-      className="bg-black h-[20vh] min-h-[150px] flex flex-col items-center justify-center p-2.5 w-full"
+      className="bg-black h-[20vh] min-h-[150px] flex flex-col md:flex-row items-center justify-between p-2 md:p-4 md:px-8 w-full"
     >
       <h1 className="mt-8 mb-6">
         <Image
-          src="/images/heman-hill-logo.jpg"
+          src="/images/heman-hill-logo-white.svg"
           alt="Heman Hill Furniture Portfolio"
-          width={134}
-          height={61}
+          width={120}
+          height={45}
           priority
         />
       </h1>

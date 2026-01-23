@@ -8,8 +8,8 @@ const Nav = () => {
   const handleClick = ref => ref.current?.scrollIntoView({ behavior: "smooth", block: "start" })
 
   return (
-    <nav aria-label="Main Navigation" className="block m-0 p-0">
-      <ul className="text-lg flex gap-4 font-light text-white mb-8">
+    <nav aria-label="Main Navigation" className="block m-0 mb-8 md:mb-0 p-0">
+      <ul className="text-lg flex gap-4 font-light text-white">
         <li>
           <button
             className="text-white bg-black border-b-2 border-b-black hover:cursor-pointer hover:border-b-white transition-all duration-300"

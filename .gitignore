@@ -45,3 +45,7 @@ public/uploads/
 next-env.d.ts
 
 _*
+
+.vscode
+
+.continue
