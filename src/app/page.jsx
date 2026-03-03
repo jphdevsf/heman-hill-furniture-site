@@ -5,12 +5,15 @@ import Footer from "./components/Footer"
 import Gallery from "./components/Gallery"
 import Header from "./components/Header"
 import Hero from "./components/Hero"
+import Nav from "./components/Nav"
 export const revalidate = 3600
 
 const HomePage = () => {
   return (
     <div className="bg-black block m-auto">
-      <Header />
+      <Header>
+        <Nav />
+      </Header>
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
         <Hero />
         <Gallery />

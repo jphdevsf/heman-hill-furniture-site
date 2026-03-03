@@ -12,10 +12,10 @@
   }
 } */
 
-body {
+/* body {
   color: var(--foreground);
   background: var(--background);
-}
+} */
 
 :root {
   --color-primary: #6900bf;

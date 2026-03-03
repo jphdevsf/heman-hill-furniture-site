@@ -2,8 +2,8 @@
 
 import Image from "next/image"
 import { useScrollRefs } from "../contexts/ScrollRefsContext.jsx"
-import Nav from "./Nav.jsx"
-export default function Header() {
+
+const Header = ({ children }) => {
   const { topRef } = useScrollRefs()
 
   return (
@@ -20,7 +20,9 @@ export default function Header() {
           priority
         />
       </h1>
-      <Nav />
+      {children}
     </header>
   )
 }
+
+export default Header
