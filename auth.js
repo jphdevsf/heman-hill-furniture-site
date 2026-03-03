@@ -8,7 +8,6 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
       if (!account?.providerAccountId) return false
       const allowedUserIds = process.env.IMAGE_UPLOAD_ACCESS_GITHUB_USER_IDS?.split(",") || []
       const isAuthorized = allowedUserIds.includes(account.providerAccountId.toString())
-      console.log("JPH ", { account, allowedUserIds, isAuthorized })
       if (!isAuthorized) return "/unauthorized" // Show custom "not authorized" page
       return true
     }
