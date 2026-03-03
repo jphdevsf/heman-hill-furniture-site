@@ -18,7 +18,7 @@ const UploadImageConfigure = props => {
   }
 
   return (
-    <li className="flex flex-col border-b-2 border-b-gray-700 pb-4">
+    <li className="flex flex-col border-b-2 flex-1/6 border-b-gray-700 pb-4">
       <div className="relative aspect-square overflow-hidden rounded-sm border border-zinc-700">
         <Image
           src={url}

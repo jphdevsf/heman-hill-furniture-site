@@ -43,7 +43,7 @@ const UploadForm = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex flex-col max-w-3xl mx-4 md:mx-auto bg-black text-white p-8 rounded-xl space-y-6 border border-zinc-800 shadow-xl"
+      className="flex flex-col max-w-4xl mx-4 md:mx-auto bg-black text-white p-8 rounded-xl space-y-6 border border-zinc-800 shadow-xl"
     >
       {/* File input */}
       <div className="flex flex-col space-y-2">
@@ -59,7 +59,7 @@ const UploadForm = () => {
         </label>
       </div>
       {files.length > 0 && (
-        <ul className="flex flex-col gap-8">
+        <ul className="flex flex-col gap-8 md:flex-row md:flex-wrap">
           {files.map((file, i) => (
             <UploadImageConfigure file={file} index={i} key={i} files={files} onUpdate={setFiles} />
           ))}

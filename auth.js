@@ -4,31 +4,13 @@ import GitHub from "next-auth/providers/github"
 export const { auth, handlers, signIn, signOut } = NextAuth({
   providers: [GitHub],
   callbacks: {
-    async jwt({ token, user }) {
-      if (user) {
-        token.id = user.id
-      }
-      return token
-    },
-    async session({ session, token }) {
-      if (token?.id) {
-        session.user.id = token.id
-      }
-      return session
-    },
-    authorized({ auth, request }) {
-      const isAdminPage = request.nextUrl.pathname.startsWith("/admin/upload")
-
-      if (!isAdminPage) {
-        return true
-      }
-
-      if (!auth?.user?.id) {
-        return false
-      }
-
-      const allowedUserIds = process.env.ALLOWED_GITHUB_USER_IDS?.split(",") || []
-      return allowedUserIds.includes(auth.user.id.toString())
+    async signIn({ account }) {
+      if (!account?.providerAccountId) return false
+      const allowedUserIds = process.env.IMAGE_UPLOAD_ACCESS_GITHUB_USER_IDS?.split(",") || []
+      const isAuthorized = allowedUserIds.includes(account.providerAccountId.toString())
+      console.log("JPH ", { account, allowedUserIds, isAuthorized })
+      if (!isAuthorized) return "/unauthorized" // Show custom "not authorized" page
+      return true
     }
   }
 })
