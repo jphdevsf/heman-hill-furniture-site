@@ -1,6 +1,4 @@
-import { auth } from "@/auth"
-
-export default auth()
+export { auth as middleware } from "@/auth"
 
 export const config = {
   matcher: ["/admin/upload/:path*"]
