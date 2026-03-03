@@ -25,7 +25,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <link rel="preload" href="/images/heman-hill-logo.jpg" as="image" />
+        <link rel="preload" href="/images/heman-hill-logo-white.svg" as="image" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
         <link
@@ -33,9 +33,11 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
         />
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased sans`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased sans bg-black`}>
         <ScrollRefsProvider>
-          <div id="__next">{children}</div>
+          <div id="__next" className="min-h-screen">
+            {children}
+          </div>
         </ScrollRefsProvider>
         <Analytics />
         <SpeedInsights />
